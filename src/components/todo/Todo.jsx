@@ -1,16 +1,23 @@
 import React from "react";
 import "./Todo.css";
+import IconButton from "@material-ui/core/IconButton";
+import BackspaceIcon from '@mui/icons-material/Backspace';
 
 const Todo = ({ todo, index, completeTodo, removeTodo }) => {
   return (
     <div
       className="todo"
-      style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+      style={{ textDecoration: todo.taskCompleted ? "line-through" : "" }}
     >
-      {todo.text}
       <div>
-        <button onClick={() => completeTodo(index)}>Complete</button>
-        <button onClick={() => removeTodo(index)}>x</button>
+        <input
+          type="checkbox"
+          onClick={() => completeTodo(index)}
+        />
+      </div>
+      {todo.task}
+      <div>
+        <IconButton onClick={() => removeTodo(index)}><BackspaceIcon /></IconButton>
       </div>
     </div>
   );

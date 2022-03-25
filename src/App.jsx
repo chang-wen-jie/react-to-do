@@ -7,29 +7,29 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([
     {
-      text: "Learn about React",
-      isCompleted: false,
+      task: "Boodschappen",
+      taskCompleted: false,
     },
     {
-      text: "Meet friend for lunch",
-      isCompleted: false,
+      task: "Koken",
+      taskCompleted: false,
     },
     {
-      text: "Build really cool todo app",
-      isCompleted: false,
+      task: "Sporten",
+      taskCompleted: false,
     },
   ]);
 
   console.log("wat is mijn todo const", todos);
 
-  const addTodo = (text) => {
-    const newTodos = [...todos, { text }];
+  const addTodo = (task) => {
+    const newTodos = [...todos, { task }];
     setTodos(newTodos);
   };
 
   const completeTodo = (index) => {
     const newTodos = [...todos];
-    newTodos[index].isCompleted = true;
+    newTodos[index].taskCompleted = true;
     setTodos(newTodos);
   };
 
@@ -53,7 +53,7 @@ function App() {
           />
         ))}
         <TodoForm addTodo={addTodo} />
-        <Heading content="Todo applicatie" />
+        <Heading beginNaam = { 0 } />
       </div>
     </div>
   );

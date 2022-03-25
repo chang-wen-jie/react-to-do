@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Heading = ({ content }) => {
-    const test = (data) => {
-        alert(data);
-    };
+const Heading = ( { beginNaam } ) => {
+    const [naam, setNaam] = useState();
+
+    useEffect(() => {
+        console.log("hallo ik ben useEffect");
+        setNaam(beginNaam);
+    }, [beginNaam]);
 
     return(
         <div>
-            <h1>{content}</h1>
-            <button onClick={test("hallo ik ben test")}>klik hier</button>
+            <h1>{naam}</h1>
+            <button onClick={() => setNaam(naam + 1)}>klik hier</button>
         </div>
     );
 };

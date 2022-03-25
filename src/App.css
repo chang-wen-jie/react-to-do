@@ -1,10 +1,13 @@
 .app {
-  background: #209cee;
+  background: #afeeee;
   height: 100vh;
   padding: 30px;
 }
 
 .todo-list {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
   background: #e8e8e8;
   border-radius: 4px;
   max-width: 400px;
