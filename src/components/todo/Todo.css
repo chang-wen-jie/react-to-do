@@ -1,10 +1,10 @@
 .todo {
   align-items: center;
-  background: #fff;
-  border-radius: 3px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 0px red;
   display: flex;
-  font-size: 12px;
+  font-size: 20px;
+  font-family: cursive;
+  font-weight: bold;
   justify-content: space-between;
   margin-bottom: 6px;
   padding: 3px 10px;

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Todo from "./components/todo/Todo";
 import TodoForm from "./components/todoForm/TodoForm";
-import Heading from "./components/heading/Heading";
 import "./App.css";
 
 function App() {
@@ -18,9 +17,11 @@ function App() {
       task: "Sporten",
       taskCompleted: false,
     },
+    {
+      task: "Stretchen",
+      taskCompleted: false,
+    },
   ]);
-
-  console.log("wat is mijn todo const", todos);
 
   const addTodo = (task) => {
     const newTodos = [...todos, { task }];
@@ -29,7 +30,7 @@ function App() {
 
   const completeTodo = (index) => {
     const newTodos = [...todos];
-    newTodos[index].taskCompleted = true;
+    newTodos[index].taskCompleted = !newTodos[index].taskCompleted;
     setTodos(newTodos);
   };
 
@@ -43,6 +44,12 @@ function App() {
   return (
     <div className="app">
       <div className="todo-list">
+        <div className="sticky-header">
+          <img src="https://www.freeiconspng.com/uploads/pushpin-png-4.png" width="50" alt="Red Pushpin" />
+          <div className="sticky-title">
+            <h1>Mijn taken</h1>
+          </div>
+        </div>
         {todos.map((todo, index) => (
           <Todo
             key={index}
@@ -53,7 +60,6 @@ function App() {
           />
         ))}
         <TodoForm addTodo={addTodo} />
-        <Heading beginNaam = { 0 } />
       </div>
     </div>
   );
