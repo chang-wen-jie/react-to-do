@@ -5,7 +5,16 @@ import CreateIcon from '@mui/icons-material/Create';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 
-const iconStyle = {
+const dialogTitleStyle = {
+  textAlign: "center",
+  background: "#ffff88",
+  fontSize: 40,
+  fontWeight: "bold",
+  fontFamily: "cursive",
+  color: "darkred",
+}
+
+const addIconStyle = {
   fontSize: 60,
   color: "#964B00",
 };
@@ -30,9 +39,10 @@ function SimpleDialog(props) {
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>Nieuwe taak</DialogTitle>
-      <form onSubmit={(e) => {handleSubmit(value); preventDefault(e)}}>
+      <DialogTitle style={dialogTitleStyle} >Nieuwe taak</DialogTitle>
+      <form className="task-dialog" onSubmit={(e) => {handleSubmit(value); preventDefault(e)}}>
         <input
+          type="text"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
@@ -52,14 +62,14 @@ const TodoForm = ({ addTodo }) => {
 
   const handleClose = (value) => {
     setOpen(false);
-    if (value.trim() === "") return;
+    if (!value || value.trim() === "") return;
     addTodo(value);
   };
 
   return (
-    <div style={{textAlign: "center", fontSize: 60, color: "#964B00"}}>
+    <div className="new-task-button">
         <IconButton onClick={handleClickOpen}>
-          <CreateIcon style={iconStyle} />
+          <CreateIcon style={addIconStyle} />
         </IconButton>
         <SimpleDialog
           open={open}

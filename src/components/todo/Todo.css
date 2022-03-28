@@ -1,11 +1,11 @@
 .todo {
-  align-items: center;
-  border-bottom: 2px solid red;
   display: flex;
-  font-size: 20px;
-  font-family: cursive;
-  font-weight: bold;
-  justify-content: space-between;
+  align-items: center;
   margin-bottom: 6px;
   padding: 3px 10px;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: cursive;
+  border-bottom: 2px solid red;
 }
