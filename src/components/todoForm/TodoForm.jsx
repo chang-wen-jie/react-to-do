@@ -1,9 +1,9 @@
 import React from "react";
 import "./TodoForm.css";
 import IconButton from "@material-ui/core/IconButton";
-import CreateIcon from '@mui/icons-material/Create';
-import DialogTitle from '@mui/material/DialogTitle';
-import Dialog from '@mui/material/Dialog';
+import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
+import DialogTitle from "@mui/material/DialogTitle";
+import Dialog from "@mui/material/Dialog";
 
 const dialogTitleStyle = {
   textAlign: "center",
@@ -11,8 +11,8 @@ const dialogTitleStyle = {
   fontSize: 40,
   fontWeight: "bold",
   fontFamily: "cursive",
-  color: "darkred",
-}
+  color: "green",
+};
 
 const addIconStyle = {
   fontSize: 60,
@@ -33,14 +33,20 @@ function SimpleDialog(props) {
     setValue("");
   };
 
-  const preventDefault = e => {
+  const preventDefault = (e) => {
     e.preventDefault();
   };
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <DialogTitle style={dialogTitleStyle} >Nieuwe taak</DialogTitle>
-      <form className="task-dialog" onSubmit={(e) => {handleSubmit(value); preventDefault(e)}}>
+      <DialogTitle style={dialogTitleStyle}>Nieuwe taak</DialogTitle>
+      <form
+        className="task-dialog"
+        onSubmit={(e) => {
+          handleSubmit(value);
+          preventDefault(e);
+        }}
+      >
         <input
           type="text"
           value={value}
@@ -68,14 +74,10 @@ const TodoForm = ({ addTodo }) => {
 
   return (
     <div className="new-task-button">
-        <IconButton onClick={handleClickOpen}>
-          <CreateIcon style={addIconStyle} />
-        </IconButton>
-        <SimpleDialog
-          open={open}
-          onClose={handleClose}
-          value={value}
-        />
+      <IconButton onClick={handleClickOpen}>
+        <DriveFileRenameOutlineIcon style={addIconStyle} />
+      </IconButton>
+      <SimpleDialog open={open} onClose={handleClose} value={value} />
     </div>
   );
 };

@@ -1,26 +1,28 @@
 .task-dialog {
-    height: 10vh;
-    width: 40vh;
-    text-align: center;
-    justify-content: center;
-    background: #ffff88;
+  height: 10vh;
+  width: 40vh;
+  text-align: center;
+  justify-content: center;
+  background: #ffff88;
 }
 
-input[type=text] {
-    display: inline-block;
-    width: 60%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    background: #ffff88;
-    border-width: 0 0 2px;
-    border-color: green;
-    box-sizing: border-box;
+input[type="text"] {
+  display: inline-block;
+  width: 60%;
+  padding: 10px 20px;
+  background: #ffff88;
+  border-width: 0 0 2px;
+  border-color: red;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: cursive;
 }
 
-input[type="text"], select {
-    outline: none;
+input[type="text"],
+select {
+  outline: none;
 }
 
 .new-task-button {
-    text-align: center;
+  text-align: center;
 }

@@ -1,3 +1,3 @@
-# React-to-do applicatie
+# react-to-do
 
-Voorbeeld applicatie voor ROC Nijmegen.
+ROC Nijmegen
